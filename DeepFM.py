@@ -290,10 +290,10 @@ class DeepFM(BaseEstimator, TransformerMixin):
                 self.valid_result.append(valid_result)
             if self.verbose > 0 and epoch % self.verbose == 0:
                 if has_valid:
-                    print("[%d] train-result=%.4f, valid-result=%.4f [%.1f s]"
+                    print("[%d] train-result=%.5f, valid-result=%.5f [%.1f s]"
                         % (epoch + 1, train_result, valid_result, time() - t1))
                 else:
-                    print("[%d] train-result=%.4f [%.1f s]"
+                    print("[%d] train-result=%.5f [%.1f s]"
                         % (epoch + 1, train_result, time() - t1))
             if has_valid and early_stopping and self.training_termination(self.valid_result):
                 break
